@@ -1,0 +1,44 @@
+##Eureka Client configuration for Eureka Service
+
+#Properties based configuration for eureka client. The properties specified here is mostly what the users
+#need to change. All of these can be specified as a java system property with -D option (eg)-Deureka.region=us-east-1
+
+<% if @eureka['datacenter'] %>
+eureka.datacenter=<%= @eureka['datacenter'] %>
+<% end %>
+<% if @eureka['environment'] %>
+eureka.environment=<%= @eureka['environment'] %>
+<% end %>
+
+#Region where eureka is deployed -For AWS specify one of the AWS regions, for other datacenters specify a arbitrary string
+#indicating the region.This is normally specified as a -D option (eg) -Deureka.region=us-east-1
+eureka.region=<%= @eureka['region'] %>
+
+#Name of the application to be identified by other services
+
+eureka.name=<%= @eureka['name'] %>
+
+#Virtual host name by which the clients identifies this service
+eureka.vipAddress=<%= @eureka['vip_address'] %>
+
+#The port where the service will be identified and will be serving requests
+eureka.port=<%= @eureka['port'] %>
+
+#For eureka clients running in eureka server, it needs to connect to servers in other zones
+eureka.preferSameZone=<%= @eureka['prefer_same_zone'] %>
+
+#Change this if you want to use a DNS based lookup for determining other eureka servers. For example
+#of specifying the DNS entries, check the eureka-client-test.properties, eureka-client-prod.properties
+eureka.shouldUseDns=<%= @eureka['should_use_dns'] %>
+eureka.eurekaServer.domainName=<%= @eureka['domain_name'] %>
+eureka.eurekaServer.port=<%= @eureka['port'] %>
+eureka.eurekaServer.context=<%= @eureka['context'] %>
+
+<% unless @eureka['availability_zones'].empty? %>
+eureka.<%= @eureka['region'] %>.availabilityZones=<%= @eureka['availability_zones'] %>
+<% end %>
+<% unless @eureka['service_url'].empty? %>
+  <% @eureka['service_url'].each do |k,v| %>
+eureka.serviceUrl.<%= k %>=<%= v %>
+  <% end %>
+<% end %>

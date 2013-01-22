@@ -1,0 +1,20 @@
+<% if @eureka['datacenter'] %>
+eureka.datacenter=<%= @eureka['datacenter'] %>
+<% end %>
+<% if @eureka['environment'] %>
+eureka.environment=<%= @eureka['environment'] %>
+<% end %>
+
+eureka.domainName=<%= @eureka['domain_name'] %>
+eureka.context=<%= @eureka['context'] %>
+
+<% if @eureka['wait_time_in_ms_when_sync_empty'] %>
+#Set this only for this sample service without which starting the instance will by default wait for the default of 5 mins
+eureka.waitTimeInMsWhenSyncEmpty=<%= @eureka['wait_time_in_ms_when_sync_empty'] %>
+<% end %>
+
+<% unless @eureka['aws_access_id'].empty? %>
+#AWS access key which has access to EIP binding and looking up autoscaling information
+eureka.awsAccessId=<%= @eureka['aws_access_id'] %>
+eureka.awsSecretKey=<%= @eureka['aws_secret_key'] %>
+<% end %>

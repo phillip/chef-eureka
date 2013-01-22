@@ -19,3 +19,10 @@ default['eureka']['service_url'] = {}
 default['eureka']['should_use_dns'] = false
 default['eureka']['domain_name'] = "mydomaintest.netflix.net"
 default['eureka']['context'] = "eureka/v2"
+
+default['eureka']['home_page_url'] = nil
+default['eureka']['home_page_url_path'] = nil
+default['eureka']['health_check_url'] = nil
+default['eureka']['health_check_url_path'] = nil
+default['eureka']['status_page_url'] = nil
+default['eureka']['status_page_url_path'] = nil

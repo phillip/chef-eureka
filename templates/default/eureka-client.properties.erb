@@ -42,3 +42,10 @@ eureka.<%= @eureka['region'] %>.availabilityZones=<%= @eureka['availability_zone
 eureka.serviceUrl.<%= k %>=<%= v %>
   <% end %>
 <% end %>
+
+<%= @eureka['home_page_url'] ? "eureka.homePageUrl=#{@eureka['home_page_url']}" : "" %>
+<%= @eureka['home_page_url_path'] ? "eureka.homePageUrlPath=#{@eureka['home_page_url_path']}" : "" %>
+<%= @eureka['health_check_url'] ? "eureka.healthCheckUrl=#{@eureka['health_check_url']}" : "" %>
+<%= @eureka['health_check_url_path'] ? "eureka.healthCheckUrlPath=#{@eureka['health_check_url_path']}" : "" %>
+<%= @eureka['status_page_url'] ? "eureka.statusPageUrl=#{@eureka['status_page_url']}" : "" %>
+<%= @eureka['status_page_url_path'] ? "eureka.statusPageUrlPath=#{@eureka['status_page_url_path']}" : "" %>

@@ -35,6 +35,12 @@ Attributes
 * `default['eureka']['should_use_dns']`
 * `default['eureka']['domain_name']`
 * `default['eureka']['context']`
+* `default['eureka']['home_page_url']`
+* `default['eureka']['home_page_url_path']`
+* `default['eureka']['health_check_url']`
+* `default['eureka']['health_check_url_path']`
+* `default['eureka']['status_page_url']`
+* `default['eureka']['status_page_url_path']`
 
 Usage
 =====

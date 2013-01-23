@@ -57,9 +57,8 @@ if node['eureka']['git_id']
     git clone https://github.com/Netflix/eureka.git
     cd eureka
     git checkout #{node['eureka']['git_id']}
-    #TODO: put templates in eureka-server/conf
     ./gradlew clean build
-    mv target/eureka.war /var/lib/tomcat#{node["tomcat"]["base_version"]}/webapps/
+    mv eureka-server/build/libs/eureka-server-*.war /var/lib/tomcat#{node["tomcat"]["base_version"]}/webapps/eureka.war
     EOH
     notifies :restart, resources(:service => "tomcat")
     notifies :run, resources("execute[jar -xf ../eureka.war]"), :immediately

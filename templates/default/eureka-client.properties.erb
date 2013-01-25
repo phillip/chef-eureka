@@ -27,8 +27,7 @@ eureka.port=<%= @eureka['port'] %>
 #For eureka clients running in eureka server, it needs to connect to servers in other zones
 eureka.preferSameZone=<%= @eureka['prefer_same_zone'] %>
 
-#Change this if you want to use a DNS based lookup for determining other eureka servers. For example
-#of specifying the DNS entries, check the eureka-client-test.properties, eureka-client-prod.properties
+#Change this if you want to use a DNS based lookup for determining other eureka servers.
 eureka.shouldUseDns=<%= @eureka['should_use_dns'] %>
 eureka.eurekaServer.domainName=<%= @eureka['domain_name'] %>
 eureka.eurekaServer.port=<%= @eureka['port'] %>

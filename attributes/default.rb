@@ -26,3 +26,7 @@ default['eureka']['health_check_url'] = nil
 default['eureka']['health_check_url_path'] = nil
 default['eureka']['status_page_url'] = nil
 default['eureka']['status_page_url_path'] = nil
+
+default[:eureka][:http_proxy][:variant] = "nginx"
+default[:eureka][:http_proxy][:port] = node['eureka']['port']
+default[:eureka][:http_proxy][:client_max_body_size] = "1024m"

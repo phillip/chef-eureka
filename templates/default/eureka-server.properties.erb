@@ -13,9 +13,9 @@ eureka.context=<%= @eureka['context'] %>
 eureka.waitTimeInMsWhenSyncEmpty=<%= @eureka['wait_time_in_ms_when_sync_empty'] %>
 <% end %>
 
-<% if @eureka['registration_enabled'] %>
+<% unless @eureka['registration_enabled'] %>
 #Set this to false to prevent the Eureka server from attempting to register with other Eureka servers
-eureka.registration.enabled=<%= @eureka['wait_time_in_ms_when_sync_empty'] %>
+eureka.registration.enabled=<%= @eureka['registration_enabled'] %>
 <% end %>
 
 <% unless @eureka['aws_access_id'].empty? %>

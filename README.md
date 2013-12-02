@@ -41,6 +41,7 @@ Attributes
 * `default['eureka']['health_check_url_path']`
 * `default['eureka']['status_page_url']`
 * `default['eureka']['status_page_url_path']`
+* `default['eureka']['enable_self_preservation'] `
 
 Usage
 =====

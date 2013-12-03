@@ -21,6 +21,7 @@ Attributes
 * `default['eureka']['server_url']` - The location to install Eureka from
 * `default['eureka']['git_id']` - Optionally install from git repository
 * `default['eureka']['wait_time_in_ms_when_sync_empty']`
+* `default['eureka']['registration_enabled']`
 * `default['eureka']['aws_access_id']` - The AWS Access Key that eureka will use
 * `default['eureka']['aws_secret_key']` - The AWS Secret Key that eureka will use
 * `default['eureka']['datacenter']`

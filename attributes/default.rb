@@ -2,6 +2,7 @@ default['eureka']['server_url'] = "http://search.maven.org/remotecontent?filepat
 default['eureka']['git_id'] = nil
 
 default['eureka']['wait_time_in_ms_when_sync_empty'] = nil
+default['eureka']['registration_enabled'] = true
 default['eureka']['aws_access_id'] = ""
 default['eureka']['aws_secret_key'] = ""
 

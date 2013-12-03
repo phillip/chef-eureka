@@ -13,6 +13,11 @@ eureka.context=<%= @eureka['context'] %>
 eureka.waitTimeInMsWhenSyncEmpty=<%= @eureka['wait_time_in_ms_when_sync_empty'] %>
 <% end %>
 
+<% unless @eureka['registration_enabled'] %>
+#Set this to false to prevent the Eureka server from attempting to register with other Eureka servers
+eureka.registration.enabled=<%= @eureka['registration_enabled'] %>
+<% end %>
+
 <% unless @eureka['aws_access_id'].empty? %>
 #AWS access key which has access to EIP binding and looking up autoscaling information
 eureka.awsAccessId=<%= @eureka['aws_access_id'] %>
